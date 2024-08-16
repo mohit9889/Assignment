@@ -1,40 +1,66 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Next.js Book App
 
-## Getting Started
+This Next.js application allows users to explore books from different genres and search for books based on title or author. It provides an infinite scrolling list of books with a search functionality, and opens the book in the preferred format (HTML, PDF, or TXT) upon clicking.
 
-First, run the development server:
+## Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- **Genre Selection:** Navigate through various book genres by clicking on genre buttons.
+- **Infinite Scrolling:** Fetch and display more books as the user scrolls.
+- **Search Functionality:** Filter books by title or author while maintaining the selected genre.
+- **Book Formats:** Open the book in HTML, PDF, or TXT format based on availability.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Installation
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+1. **Clone the Repository**
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+   ```bash
+   git clone https://github.com/mohit9889/Assignment.git
+   cd Assignment
+   ```
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+2. Install Dependencies
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+   Ensure you have Node.js installed. Then, run:
 
-## Learn More
+   ```bash
+   npm install
+   ```
 
-To learn more about Next.js, take a look at the following resources:
+3. Environment Variables
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+   Create a .env file in the root directory of the project and add the following environment variable:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+   ```bash
+   BASE_API_URL=http://skunkworks.ignitesol.com:8000
+   ```
 
-## Deploy on Vercel
+4. Run the Development Server
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+   ```bash
+   npm run dev
+   ```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+   Open http://localhost:3000 in your browser to view the application.
+
+## Usage
+
+1. **Home Page**
+
+   - Displays a list of genre buttons.
+   - Clicking a genre button navigates to the genre-specific books page.
+
+2. **Books Page**
+
+   - Shows a list of books for the selected genre with infinite scrolling.
+   - Use the search bar to filter books by title or author.
+   - Click on a book card to open the book in the preferred format.
+
+3. **Book Formats**
+
+   - The application will attempt to open the book in the following order of priority:
+
+     1. HTML
+     2. PDF
+     3. TXT
+
+   - If none of these formats are available, an error alert will be displayed.

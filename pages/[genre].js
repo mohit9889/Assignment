@@ -1,11 +1,13 @@
 import { useState, useEffect } from "react";
 import SearchBar from "~/components/SearchBar";
+import { useRouter } from "next/router";
 import InfiniteScrollWrapper from "~/components/InfiniteScroll";
 import { fetchBooks } from "~/api";
 import BackSvg from "~/public/assets/Back.svg";
 import BookCard from "~/components/BookCard";
 
 const GenrePage = ({ genre = "", books = {} }) => {
+  const router = useRouter();
   const [booksData, setBooksData] = useState(books.results);
   const [searchQuery, setSearchQuery] = useState("");
 
@@ -34,7 +36,10 @@ const GenrePage = ({ genre = "", books = {} }) => {
   return (
     <div className="h-full w-full">
       <div className="header container py-4 mx-auto">
-        <h1 className="heading-2 flex items-center gap-2 mb-2">
+        <h1
+          className="heading-2 flex items-center gap-2 mb-2 cursor-pointer"
+          onClick={() => router.back()}
+        >
           <BackSvg />
           {genre.toUpperCase()}
         </h1>

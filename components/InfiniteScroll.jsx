@@ -31,7 +31,7 @@ const InfiniteScrollWrapper = ({
         loadMoreData();
       }
     },
-    [nextPage, isLoading]
+    [nextPage, isLoading],
   );
 
   // Set up the Intersection Observer
