@@ -1,0 +1,58 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom Styles */
+@layer utilities {
+  .heading-1 {
+    @apply text-[48px] font-semibold text-primary font-montserrat;
+  }
+
+  .heading-2 {
+    @apply text-[30px] font-semibold text-primary font-montserrat;
+  }
+
+  .genre-card {
+    @apply text-[20px] font-normal font-montserrat rounded-md px-4 h-[50px] shadow-md flex items-center justify-between;
+  }
+
+  .body-text {
+    @apply text-[16px] font-normal text-grey-dark font-montserrat;
+  }
+
+  .search-box {
+    @apply text-[16px] font-normal text-grey-dark font-montserrat;
+  }
+
+  .book-name,
+  .book-author {
+    @apply text-[12px] font-normal font-montserrat;
+  }
+}
+
+/* Define custom colors */
+@layer base {
+  :root {
+    --primary-color: #5e56e7;
+    --background-color: #f8f7ff;
+    --grey-light: #f0f0f6;
+    --grey-medium: #a0a0a0;
+    --grey-dark: #333333;
+  }
+}
+
+/* Extend Tailwind color classes */
+@layer utilities {
+  .text-primary {
+    color: var(--primary-color);
+  }
+  .text-grey-dark {
+    color: var(--grey-dark);
+  }
+  .shadow-md {
+    box-shadow: 0 2px 5px 0 rgba(211, 209, 238, 0.5);
+  }
+}
+
+// components
+@import "./components/Icons.scss";

@@ -1,0 +1,11 @@
+@mixin set-dimensions($size) {
+  width: $size;
+  height: $size;
+}
+
+.icon {
+  // Default height and width
+  svg {
+    @include set-dimensions(18px);
+  }
+}
